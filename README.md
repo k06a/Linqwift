@@ -1,6 +1,6 @@
 # Linqwift
 
-[![CI Status](http://img.shields.io/travis/k06a/Linqwift.svg?style=flat)](https://travis-ci.org/Anton Bukov/Linqwift)
+[![CI Status](http://img.shields.io/travis/k06a/Linqwift.svg?style=flat)](https://travis-ci.org/k06a/Linqwift)
 [![Version](https://img.shields.io/cocoapods/v/Linqwift.svg?style=flat)](http://cocoapods.org/pods/Linqwift)
 [![License](https://img.shields.io/cocoapods/l/Linqwift.svg?style=flat)](http://cocoapods.org/pods/Linqwift)
 [![Platform](https://img.shields.io/cocoapods/p/Linqwift.svg?style=flat)](http://cocoapods.org/pods/Linqwift)
@@ -14,15 +14,15 @@ http://msdn.microsoft.com/en-us/library/system.linq.enumerable_methods.aspx
 
 ####Main Methods
 ```
-func Where(predicate: (T)->Bool) -> SequenceOf<T>
-func Where(predicate: (T,Int)->Bool) -> SequenceOf<T>
-func Select<U>(transform: (T)->U) -> SequenceOf<U>
-func Select<U>(transform: (T,Int)->U) -> SequenceOf<U>
-func Distinct<U where U: Hashable>(transform: (T)->U) -> SequenceOf<T>
-func Skip(count: Int) -> SequenceOf<T>
-func SkipWhile(predicate: (T)->Bool) -> SequenceOf<T>
-func Take(count: Int) -> SequenceOf<T>
-func TakeWhile(predicate: (T)->Bool) -> SequenceOf<T>
+func Where(predicate: (T)->Bool) -> AnySequence<T>
+func Where(predicate: (T,Int)->Bool) -> AnySequence<T>
+func Select<U>(transform: (T)->U) -> AnySequence<U>
+func Select<U>(transform: (T,Int)->U) -> AnySequence<U>
+func Distinct<U where U: Hashable>(transform: (T)->U) -> AnySequence<T>
+func Skip(count: Int) -> AnySequence<T>
+func SkipWhile(predicate: (T)->Bool) -> AnySequence<T>
+func Take(count: Int) -> AnySequence<T>
+func TakeWhile(predicate: (T)->Bool) -> AnySequence<T>
 ```
 
 ####Aggregators
