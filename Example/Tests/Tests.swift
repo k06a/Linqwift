@@ -2,28 +2,32 @@ import UIKit
 import XCTest
 import Linqwift
 
-class Tests: XCTestCase {
-    
-    override func setUp() {
-        super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+class Tests: XCTestCase
+{
+    func testWhere()
+    {
+        let seq = AnySequence([1,2,3,4,5,6,7,8])
+        XCTAssertEqual([1,3,5,7], Array<Int>(seq.Where { a,i in i%2==0 }))
+        XCTAssertEqual([2,4,6,8], Array<Int>(seq.Where { a,i in i%2==1 }))
+        XCTAssertEqual([2,4,6,8], Array<Int>(seq.Where { a,i in a%2==0 }))
+        XCTAssertEqual([1,3,5,7], Array<Int>(seq.Where { a,i in a%2==1 }))
+        XCTAssertEqual([3,4,5,6], Array<Int>(seq.Where { a,i in a>2&&a<7 }))
     }
     
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
+    func testSelect()
+    {
+        let seq = AnySequence([1,2,3,4])
+        XCTAssertEqual([2,4,6,8], Array<Int>(seq.Select { a,i in a*2 }))
+        XCTAssertEqual([6,7,8,9], Array<Int>(seq.Select { a,i in a+5 }))
+        XCTAssertEqual([1,3,5,7], Array<Int>(seq.Select { a,i in a+i }))
+        
+        let dict: [Int:String] = [
+            1:"One",
+            2:"Two",
+            3:"Three",
+            4:"Four"
+        ]
+        let ans = ["One","Two","Three","Four"]
+        XCTAssertEqual(ans, Array<String>(seq.Select { a,i in dict[a]! }))
     }
-    
-    func testExample() {
-        // This is an example of a functional test case.
-        XCTAssert(true, "Pass")
-    }
-    
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measureBlock() {
-            // Put the code you want to measure the time of here.
-        }
-    }
-    
 }

@@ -1,0 +1,16 @@
+PODS:
+  - Linqwift (0.1.0)
+
+DEPENDENCIES:
+  - Linqwift (from `../`)
+
+EXTERNAL SOURCES:
+  Linqwift:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  Linqwift: 82c2345da0bd428ef8fbe1da07406353fd493b04
+
+PODFILE CHECKSUM: 4e9c6e39b6b8343a1c924d59f27e24ee7e02be2a
+
+COCOAPODS: 1.0.0.beta.4
