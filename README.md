@@ -54,4 +54,4 @@ Anton Bukov, k06aaa@gmail.com
 
 ## License
 
-Linqwift is available under the MIT license. See the LICENSE file for more info.
+Linqwift is available under the [MIT License](LICENSE).
